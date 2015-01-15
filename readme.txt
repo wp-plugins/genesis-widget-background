@@ -41,7 +41,7 @@ If you are looking for additional features, let me know in the plugin support fo
 
 == Screenshots ==
 
-1. screenshot1.jpg
+1. screenshot-1.jpg
 
 == Changelog ==
 
