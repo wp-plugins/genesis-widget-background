@@ -7,11 +7,13 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The Genesis Widget Background allows you to set a background for your featured page widget. You vcn use the featured image of the selected page, a custom image or a background color. Also there is a option to set the background fixed. With this plugin it will be a breeze to create a single page templates.
+The Genesis Widget Background allows you to set a background for your featured page widget. You can use the featured image, a custom image or a background color. 
 
 == Description ==
 
 **Please Note:** This plugin only works on the <a href="http://www.studiopress.com/" title="Genesis Framework" rel="nofollow">Genesis Framework</a>
+
+The Genesis Widget Background allows you to set a background for your featured page widget. You can use the featured image of the selected page, a custom image or a background color. Also there is a option to set the background fixed. With this plugin it will be a breeze to create a single page templates.
 
 
 = Plugin Features =
@@ -20,7 +22,8 @@ The Genesis Widget Background allows you to set a background for your featured p
 * Fields show/hide based on user selection for cleaner UI 
 * Option for fixed background image
 * Works alongside the original *Genesis - Featured Page*
-* Genesis 2.0 and HTML5 compatible 
+* Genesis 2.0 
+* For the moment only HTML5 compatible 
 
 If you are looking for additional features, let me know in the plugin support forum. 
 
