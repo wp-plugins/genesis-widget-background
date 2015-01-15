@@ -1,5 +1,5 @@
 === Genesis Widget Background ===
-Contributors: Frank Schrijvers
+Contributors: frankschrijvers
 Tags: featured page, genesis, widget, featured content, Genesis Framework, genesiswp, page, widget-only, widgets
 Requires at least: 3.6
 Tested up to: 4.0.1
@@ -7,7 +7,7 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The Genesis Widget Background allows you to set a background for your featured page widget. You can use the featured image, a custom image or a background color. 
+The Genesis Widget Background allows you to set a background for your featured page widget. You can use the featured image, a custom image or a color. 
 
 == Description ==
 
