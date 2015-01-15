@@ -1,0 +1,38 @@
+
+article.image-section {
+	background-position: 50% 0px;
+	background-repeat: no-repeat;
+	color: #fff;
+	width: 100%;
+	padding-top: 150px;
+	padding-bottom: 150px;
+}
+
+article.fixed {
+	background-attachment: fixed;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	text-align: center;
+	//background-clip: padding-box;
+}
+
+article.non-fixed {
+	background-size: cover;
+	display: table;
+	position: relative;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+}
+
+@media only screen and (max-width: 800px) {
+	div.features {
+		background-attachment: scroll;
+		background-position: top;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+	}
+}
