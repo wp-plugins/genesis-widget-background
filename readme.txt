@@ -15,6 +15,8 @@ The Genesis Widget Background allows you to set a background for your featured p
 
 The Genesis Widget Background allows you to set a background for your featured page widget. You can use the featured image of the selected page, a custom image or a background color. Also there is a option to set the background fixed. With this plugin it will be a breeze to create a single page templates.
 
+More information an example and the manual can be found on the website of <a href="http://www.wpstud.io/genesis-widget-background-plugin/">WPStudio</a>.
+
 
 = Plugin Features =
 * Custom image upload field
