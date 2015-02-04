@@ -311,7 +311,7 @@ class Genesis_Widget_Background extends WP_Widget {
 		<div class="wpstudio-background_fixed <?php if ( $instance['background_fixed'] != 2 ) echo ('show');  ?>" id="<?php echo $this->get_field_id('toggle_background_fixed'); ?>" >
 			<hr class="div" />
 			<input class="checkbox" type="checkbox" <?php checked($instance['background_fixed'], 'on'); ?> id="<?php echo $this->get_field_id('background_fixed'); ?>" name="<?php echo $this->get_field_name('background_fixed'); ?>" />
-			<label for="<?php echo $this->get_field_id( 'show_content' ); ?>"><?php _e( 'Background Fixed', 'genesis_widget_background' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'background_fixed' ); ?>"><?php _e( 'Background Fixed', 'genesis_widget_background' ); ?></label>
 		</div>
 
 		<hr class="div" />
