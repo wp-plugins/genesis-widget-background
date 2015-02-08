@@ -3,7 +3,7 @@ Contributors: frankschrijvers
 Tags: featured page, genesis, widget, featured content, Genesis Framework, genesiswp, page, widget-only, widgets
 Requires at least: 3.6
 Tested up to: 4.1
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,6 +49,9 @@ Looking for additional features? Just let me know.
 1. screenshot-1.jpg
 
 == Changelog ==
+
+= 1.1 =
+* Bugfix, label on Background fixed sets the correct option.
 
 = 1.0 =
 * Initial Release
