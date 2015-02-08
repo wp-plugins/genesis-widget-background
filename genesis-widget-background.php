@@ -3,7 +3,7 @@
 Plugin Name: Genesis Widget Background
 Plugin URI: http://www.wpstud.io
 Description: Adds the featured image or custom image as background of the widget.
-Version: 1.0
+Version: 1.1
 Author: Frank Schrijvers
 Author URI: http://www.wpstud.io
 Text Domain: genesis-widget-background
