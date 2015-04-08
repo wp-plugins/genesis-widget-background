@@ -3,7 +3,7 @@ Contributors: frankschrijvers
 Tags: featured page, genesis, widget, featured content, Genesis Framework, genesiswp, page, widget-only, widgets
 Requires at least: 3.6
 Tested up to: 4.1
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,7 @@ More information, an example, and the manual can be found on <a href="http://www
 * Show hide page title
 * Show hide page content
 * Content character limit
+* Translatable
 * Works alongside the original *Genesis - Featured Page*
 * Genesis 2.0 
 * For the moment only HTML5 compatible 
@@ -49,6 +50,10 @@ Looking for additional features? Just let me know.
 1. screenshot-1.jpg
 
 == Changelog ==
+
+= 1.2 =
+* Internationalize Plugin
+* Add dutch language
 
 = 1.1 =
 * Bugfix, label on Background fixed sets the correct option.

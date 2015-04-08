@@ -3,7 +3,7 @@
 Plugin Name: Genesis Widget Background
 Plugin URI: http://www.wpstud.io
 Description: Adds the featured image or custom image as background of the widget.
-Version: 1.1
+Version: 1.2
 Author: Frank Schrijvers
 Author URI: http://www.wpstud.io
 Text Domain: genesis-widget-background
@@ -31,22 +31,22 @@ register_activation_hook( __FILE__, 'wpstudio_activation_check' );
  * This function runs on plugin activation. It checks to make sure the required
  * minimum Genesis version is installed. If not, it deactivates itself.
  *
- * 	Author: Nathan Rice
- *	Author URI: http://www.nathanrice.net/
+ *  Author: Nathan Rice
+ *  Author URI: http://www.nathanrice.net/
  */
 function wpstudio_activation_check() {
-	$latest = '2.1.2';
-	$theme_info = wp_get_theme( 'genesis' );
+    $latest = '2.1.2';
+    $theme_info = wp_get_theme( 'genesis' );
 
-	if ( 'genesis' != basename( TEMPLATEPATH ) ) {
-		deactivate_plugins( plugin_basename( __FILE__ ) ); // Deactivate plugin
-		wp_die( sprintf( __( 'Sorry, you can\'t activate %1$sGenesis Widget Background unless you have installed the %3$sGenesis Framework%4$s. Go back to the %5$sPlugins Page%4$s.', 'genesis-featured-page-advanced' ), '<em>', '</em>', '<a href="http://www.studiopress.com/themes/genesis" target="_blank">', '</a>', '<a href="javascript:history.back()">' ) );
-	}
+    if ( 'genesis' != basename( TEMPLATEPATH ) ) {
+        deactivate_plugins( plugin_basename( __FILE__ ) ); // Deactivate plugin
+        wp_die( sprintf( __( 'Sorry, you can\'t activate the Genesis Widget Background unless you have installed the Genesis Framework. Go back to the Plugins Page.', 'genesis-widget-background' ), '<em>', '</em>', '<a href="http://www.studiopress.com/themes/genesis" target="_blank">', '</a>', '<a href="javascript:history.back()">' ) );
+    }
 
-	if ( version_compare( $theme_info['Version'], $latest, '<' ) ) {
-		deactivate_plugins( plugin_basename( __FILE__ ) ); // Deactivate plugin
-		wp_die( sprintf( __( 'Sorry, you can\'t activate %1$sGenesis Widget Background unless you have installed the %3$sGenesis %4$s%5$s. Go back to the %6$sPlugins Page%5$s.', 'genesis-featured-page-advanced' ), '<em>', '</em>', '<a href="http://www.studiopress.com/themes/genesis" target="_blank">', $latest, '</a>', '<a href="javascript:history.back()">' ) );
-	}
+    if ( version_compare( $theme_info['Version'], $latest, '<' ) ) {
+        deactivate_plugins( plugin_basename( __FILE__ ) ); // Deactivate plugin
+        wp_die( sprintf( __( 'Sorry, you can\'t activate the Genesis Widget Background unless you have installed the Genesis Framework. Go back to the Plugins Page.', 'genesis-widget-background' ), '<em>', '</em>', '<a href="http://www.studiopress.com/themes/genesis" target="_blank">', $latest, '</a>', '<a href="javascript:history.back()">' ) );
+    }
 }
 
 
@@ -57,7 +57,7 @@ add_action('admin_init', 'wpstudio_deactivate_check');
  */
 function wpstudio_deactivate_check() {
     if ( ! function_exists('genesis_pre') ) {
-		deactivate_plugins( plugin_basename( __FILE__ ) ); // Deactivate plugin
+        deactivate_plugins( plugin_basename( __FILE__ ) ); // Deactivate plugin
     }
 }
 
@@ -76,4 +76,10 @@ function wpstudio_register_widget() {
      register_widget( 'Genesis_Widget_Background' );
 }
 
-
+add_action( 'init', 'wpstudio_load_plugin_textdomain' );
+/** 
+* Localization
+*/
+function wpstudio_load_plugin_textdomain() {
+    load_plugin_textdomain('genesis-widget-background', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+}

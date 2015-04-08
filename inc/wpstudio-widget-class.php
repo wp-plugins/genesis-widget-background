@@ -17,7 +17,6 @@ function wpstudio_name_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'wpstudio_name_scripts' );
 
-
 class Genesis_Widget_Background extends WP_Widget {
 
 	/**
@@ -53,7 +52,7 @@ class Genesis_Widget_Background extends WP_Widget {
 
 		$widget_ops = array(
 			'classname'   => 'widget_background featuredpage',
-			'description' => __( 'Displays featured page with images and content.' , 'genesis_widget_background' ),
+			'description' => __( 'Displays featured page with images and content.' , 'genesis-widget-background' ),
 		);
 
 		$control_ops = array(
@@ -62,7 +61,7 @@ class Genesis_Widget_Background extends WP_Widget {
 			'height'  => 250,
 		);
 
-		parent::__construct( 'genesis-widget-background', __( 'Genesis - Widget Background', 'genesis_widget_background' ), $widget_ops, $control_ops );
+		parent::__construct( 'genesis-widget-background', __( 'Genesis - Widget Background', 'genesis-widget-background' ), $widget_ops, $control_ops );
 
 		//* Enqueue Admin scripts and styles
 		add_action( 'admin_enqueue_scripts', array( $this, 'wpstudio_admin_scripts_enqueue' ) );
@@ -233,7 +232,7 @@ class Genesis_Widget_Background extends WP_Widget {
 		
 		<!--Widget Title Block-->
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'genesis_widget_background' ); ?>:</label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'genesis-widget-background' ); ?>:</label>
 			<input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat" />
 		</p>
 	
@@ -242,7 +241,7 @@ class Genesis_Widget_Background extends WP_Widget {
 		<!--Featured Page Selection-->
 		<div class="<?php if ( $instance['feature_type'] != 'page' ) echo ('hidden');  ?>" id="<?php echo $this->get_field_id('wpstudio_widget_background'); ?>" >
 			<p>
-				<label for="<?php echo $this->get_field_id( 'page_id' ); ?>"><?php _e( 'Select Page', 'genesis_widget_background' ); ?>:</label>
+				<label for="<?php echo $this->get_field_id( 'page_id' ); ?>"><?php _e( 'Select Page', 'genesis-widget-background' ); ?>:</label>
 				<?php wp_dropdown_pages( array( 'name' => $this->get_field_name( 'page_id' ), 'selected' => $instance['page_id'] ) ); ?>
 			</p>
 		</div>
@@ -250,33 +249,33 @@ class Genesis_Widget_Background extends WP_Widget {
 		
 		<!--Image Type Selection-->
 		<div class="wpstudio-show-image wpstudio-radio">
-			<label for="<?php echo $this->get_field_id( 'Select Background:' ); ?>"><?php _e( 'Select Background Image', 'genesis_widget_background' ); ?>:</label><br>
+			<label for="<?php echo $this->get_field_id( 'Select Background:' ); ?>"><?php _e( 'Select Background Image', 'genesis-widget-background' ); ?>:</label><br>
 			<label for="<?php echo $this->get_field_id( 'show_no_image' ); ?>">
 				<input type="radio" id="<?php echo $this->get_field_id( 'show_no_image' ); ?>" name="<?php echo $this->get_field_name( 'show_image' ); ?>" value="1" <?php checked( 1, $instance['show_image'] ); ?> />
-				<span><?php _e( 'No Image', 'genesis_widget_background' ); ?></span>
+				<span><?php _e( 'No Image', 'genesis-widget-background' ); ?></span>
 			</label><br />
 			<label for="<?php echo $this->get_field_id( 'show_featured_image' ); ?>">
 				<input type="radio" id="<?php echo $this->get_field_id( 'show_featured_image' ); ?>" name="<?php echo $this->get_field_name( 'show_image' ); ?>" <?php if ( $instance['feature_type'] != 'page' ) echo ('disabled'); ?> value="2" <?php checked( 2, $instance['show_image'] ); ?> />
-				<span class="<?php if ( $instance['feature_type'] != 'page' ) echo ('wpstudio-disabled'); ?>" id="<?php echo $this->get_field_id( 'show_image' ); ?>"><?php _e( 'Show Featured Image', 'genesis_widget_background' ); ?></span>
+				<span class="<?php if ( $instance['feature_type'] != 'page' ) echo ('wpstudio-disabled'); ?>" id="<?php echo $this->get_field_id( 'show_image' ); ?>"><?php _e( 'Show Featured Image', 'genesis-widget-background' ); ?></span>
 			</label><br />
 			<label for="<?php echo $this->get_field_id( 'show_custom_image' ); ?>">
 				<input type="radio" id="<?php echo $this->get_field_id( 'show_custom_image' ); ?>" name="<?php echo $this->get_field_name( 'show_image' ); ?>" value="3" <?php checked( 3, $instance['show_image'] ); ?> />
-				<span><?php _e( 'Show Custom Image', 'genesis_widget_background' ); ?></span>
+				<span><?php _e( 'Show Custom Image', 'genesis-widget-background' ); ?></span>
 			</label>
 			<label for="<?php echo $this->get_field_id( 'show_background_color' ); ?>">
 				<input type="radio" id="<?php echo $this->get_field_id( 'show_background_color' ); ?>" name="<?php echo $this->get_field_name( 'show_image' ); ?>" value="4" <?php checked( 4, $instance['show_image'] ); ?> />
-				<span><?php _e( 'Background Color', 'genesis_widget_background' ); ?></span>
+				<span><?php _e( 'Background Color', 'genesis-widget-background' ); ?></span>
 			</label>
 		</div>
 		
 		<!--Show Featured Image-->
 		<div class="wpstudio-image-size <?php if ( $instance['show_image'] != 2 ) echo ('hidden');  ?>" id="<?php echo $this->get_field_id('toggle_image_size'); ?>" >
-			<label for="<?php echo $this->get_field_id( 'image_size' ); ?>"><?php _e( 'Image Size', 'genesis_widget_background' ); ?>:</label>
+			<label for="<?php echo $this->get_field_id( 'image_size' ); ?>"><?php _e( 'Image Size', 'genesis-widget-background' ); ?>:</label>
 			<select id="<?php echo $this->get_field_id( 'image_size' ); ?>" class="genesis-image-size-selector" name="<?php echo $this->get_field_name( 'image_size' ); ?>">
 				<option value="thumbnail" <?php selected( 'thumbnail', $instance[ 'image_size' ] ); ?>>Thumbnail (<?php echo absint( get_option( 'thumbnail_size_w' ) ); ?>&#x000D7;<?php echo absint( get_option( 'thumbnail_size_h' ) ); ?>)</option>
 				<option value="medium" <?php selected( 'medium', $instance[ 'image_size' ] ); ?>>Medium (<?php echo absint( get_option( 'medium_size_w' ) ); ?>&#x000D7;<?php echo absint( get_option( 'medium_size_h' ) ); ?>)</option>
 				<option value="large" <?php selected( 'large', $instance[ 'image_size' ] ); ?>>Large (<?php echo absint( get_option( 'large_size_w' ) ); ?>&#x000D7;<?php echo absint( get_option( 'large_size_h' ) ); ?>)</option>
-				<option value="full" <?php selected( 'full', $instance[ 'image_size' ] ); ?>>Full (<?php _e( 'Original Image Size', 'genesis_widget_background' ); ?>)</option>
+				<option value="full" <?php selected( 'full', $instance[ 'image_size' ] ); ?>>Full (<?php _e( 'Original Image Size', 'genesis-widget-background' ); ?>)</option>
 				<?php
 				$sizes = genesis_get_additional_image_sizes();
 				foreach ( (array) $sizes as $name => $size )
@@ -287,7 +286,7 @@ class Genesis_Widget_Background extends WP_Widget {
 		
 		<!--Show Custom Image-->		
 		<div class="<?php if ( $instance['show_image'] != 3 ) echo ('hidden'); ?>" id="<?php echo $this->get_field_id('toggle_uploader'); ?>"  >
-			<input type="submit" class="button fpa-uploader-button" name="<?php echo $this->get_field_name('uploader_button'); ?>" id="<?php echo $this->get_field_id('uploader_button'); ?>" value="<?php _e( 'Select an Image', 'genesis' ); ?>" onclick="fpa_imageUpload.uploader( '<?php echo $this->id; ?>', '<?php echo $id_prefix; ?>' ); return false;" />
+			<input type="submit" class="button fpa-uploader-button" name="<?php echo $this->get_field_name('uploader_button'); ?>" id="<?php echo $this->get_field_id('uploader_button'); ?>" value="<?php _e( 'Select an Image', 'genesis-widget-background' ); ?>" onclick="fpa_imageUpload.uploader( '<?php echo $this->id; ?>', '<?php echo $id_prefix; ?>' ); return false;" />
 			<div class="wpstudio-image-preview-wrapper">
 				<div class="wpstudio-image-preview-inner">
 				<?php if ( !empty( $instance['custom_image'] ) ) {?>
@@ -303,7 +302,7 @@ class Genesis_Widget_Background extends WP_Widget {
 
 		<!--Background Color-->
 		<div class="wpstudio-background_color <?php if ( $instance['background_color'] != 4 ) echo ('show');  ?>" id="<?php echo $this->get_field_id('toggle_background_color'); ?>" >
-		<label for="<?php echo $this->get_field_id( 'background_color' ); ?>"><?php _e( 'Background Color', 'genesis_widget_background' ); ?>:</label>
+		<label for="<?php echo $this->get_field_id( 'background_color' ); ?>"><?php _e( 'Background Color', 'genesis-widget-background' ); ?>:</label>
 		<input type="text" id="<?php echo $this->get_field_id( 'background_color' ); ?>" name="<?php echo $this->get_field_name( 'background_color' ); ?>" value="<?php echo esc_attr( $instance['background_color'] ); ?>" />
 		</div>
 
@@ -311,7 +310,7 @@ class Genesis_Widget_Background extends WP_Widget {
 		<div class="wpstudio-background_fixed <?php if ( $instance['background_fixed'] != 2 ) echo ('show');  ?>" id="<?php echo $this->get_field_id('toggle_background_fixed'); ?>" >
 			<hr class="div" />
 			<input class="checkbox" type="checkbox" <?php checked($instance['background_fixed'], 'on'); ?> id="<?php echo $this->get_field_id('background_fixed'); ?>" name="<?php echo $this->get_field_name('background_fixed'); ?>" />
-			<label for="<?php echo $this->get_field_id( 'background_fixed' ); ?>"><?php _e( 'Background Fixed', 'genesis_widget_background' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'background_fixed' ); ?>"><?php _e( 'Background Fixed', 'genesis-widget-background' ); ?></label>
 		</div>
 
 		<hr class="div" />
@@ -322,7 +321,7 @@ class Genesis_Widget_Background extends WP_Widget {
 			<!--Page Title Block-->
 			<p class="wpstudio-toggle-page-settings">
 				<input id="<?php echo $this->get_field_id( 'show_title' ); ?>" type="checkbox" name="<?php echo $this->get_field_name( 'show_title' ); ?>" value="1" <?php checked( $instance['show_title'] ); ?> />
-				<label for="<?php echo $this->get_field_id( 'show_title' ); ?>"><?php _e( 'Show Page Title', 'genesis_widget_background' ); ?></label>
+				<label for="<?php echo $this->get_field_id( 'show_title' ); ?>"><?php _e( 'Show Page Title', 'genesis-widget-background' ); ?></label>
 			</p>
 		
 			<hr class="div" />
@@ -330,10 +329,10 @@ class Genesis_Widget_Background extends WP_Widget {
 			<!--Page Content Block-->
 			<p class="wpstudio-toggle-content-limit">
 				<input id="<?php echo $this->get_field_id( 'show_content' ); ?>" type="checkbox" name="<?php echo $this->get_field_name( 'show_content' ); ?>" value="1" <?php checked( $instance['show_content'] ); ?> />
-				<label for="<?php echo $this->get_field_id( 'show_content' ); ?>"><?php _e( 'Show Page Content', 'genesis_widget_background' ); ?></label>
+				<label for="<?php echo $this->get_field_id( 'show_content' ); ?>"><?php _e( 'Show Page Content', 'genesis-widget-background' ); ?></label>
 			</p>
 			<p class="<?php if ( $instance['show_content'] != 1 ) echo ('hidden'); ?>" id="<?php echo $this->get_field_id('toggle_content_limit'); ?>">
-				<label for="<?php echo $this->get_field_id( 'content_limit' ); ?>"><?php _e( 'Content Character Limit', 'genesis_widget_background' ); ?>:</label>
+				<label for="<?php echo $this->get_field_id( 'content_limit' ); ?>"><?php _e( 'Content Character Limit', 'genesis-widget-background' ); ?>:</label>
 				<input type="text" id="<?php echo $this->get_field_id( 'content_limit' ); ?>" name="<?php echo $this->get_field_name( 'content_limit' ); ?>" value="<?php echo esc_attr( $instance['content_limit'] ); ?>" size="3" />
 			</p>
 		
@@ -343,7 +342,7 @@ class Genesis_Widget_Background extends WP_Widget {
 
 		<!--Read More Button/Text-->
 		<p class="wpstudio-read-more">
-			<label for="<?php echo $this->get_field_id( 'more_text' ); ?>"><?php _e( 'More Text', 'genesis_widget_background' ); ?>:</label>
+			<label for="<?php echo $this->get_field_id( 'more_text' ); ?>"><?php _e( 'More Text', 'genesis-widget-background' ); ?>:</label>
 			<input type="text" id="<?php echo $this->get_field_id( 'more_text' ); ?>" name="<?php echo $this->get_field_name( 'more_text' ); ?>" value="<?php echo esc_attr( $instance['more_text'] ); ?>" />
 		</p>
 		<?php
